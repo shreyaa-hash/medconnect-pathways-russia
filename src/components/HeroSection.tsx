@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, GraduationCap, Users, Award, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import ConsultationDialog from "./ConsultationDialog";
 
 const HeroSection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   const stats = [
     { icon: GraduationCap, value: "15+", label: "Partner Universities" },
     { icon: Users, value: "1000+", label: "Students Guided" },
     { icon: Award, value: "100%", label: "Visa Success" },
   ];
-
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Enhanced Overlay */}
@@ -59,11 +62,18 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-up" 
             style={{ animationDelay: "0.3s" }}
           >
-            <Button variant="accent" size="xl" className="group shadow-2xl shadow-accent/30 hover:shadow-accent/50 transition-shadow">
+            <Button 
+              variant="accent" 
+              size="xl" 
+              className="group shadow-2xl shadow-accent/30 hover:shadow-accent/50 transition-shadow"
+              onClick={() => setDialogOpen(true)}
+            >
               Start Your Journey
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
+
+          <ConsultationDialog open={dialogOpen} onOpenChange={setDialogOpen} />
 
           {/* Stats */}
           <div 
