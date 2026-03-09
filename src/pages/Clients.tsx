@@ -28,6 +28,7 @@ import type { Tables } from "@/integrations/supabase/types";
 type Client = Tables<"clients">;
 
 const ClientsPage = () => {
+  const { signOut } = useAuth();
   const queryClient = useQueryClient();
   const [search, setSearch] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
