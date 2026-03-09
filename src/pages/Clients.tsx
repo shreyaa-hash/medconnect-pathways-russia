@@ -20,8 +20,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toast } from "sonner";
-import { Plus, Pencil, Trash2, Users, Search, ArrowLeft } from "lucide-react";
+import { Plus, Pencil, Trash2, Users, Search, ArrowLeft, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 import type { Tables } from "@/integrations/supabase/types";
 
 type Client = Tables<"clients">;
