@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { GraduationCap, Send, CheckCircle, Phone, Mail } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ConsultationDialogProps {
   open: boolean;
@@ -33,15 +34,35 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast.success("Request submitted successfully!", {
-      description: "Our counselor will contact you within 24 hours.",
-    });
+    try {
+      // Save to database
+      const { error: dbError } = await supabase
+        .from("consultation_requests")
+        .insert({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          course: formData.course || null,
+          message: formData.message || null,
+        });
+
+      if (dbError) throw dbError;
+
+      // Trigger email notification
+      await supabase.functions.invoke("send-consultation-email", {
+        body: formData,
+      });
+
+      setIsSubmitted(true);
+      toast.success("Request submitted successfully!", {
+        description: "Our counselor will contact you within 24 hours.",
+      });
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      toast.error("Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
