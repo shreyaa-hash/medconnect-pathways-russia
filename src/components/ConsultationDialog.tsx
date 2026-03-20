@@ -30,6 +30,8 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
     message: "",
   });
 
+  const WHATSAPP_NUMBER = "919936949794";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -48,14 +50,22 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
 
       if (dbError) throw dbError;
 
-      // Trigger email notification
-      await supabase.functions.invoke("send-consultation-email", {
-        body: formData,
-      });
+      // Build WhatsApp message
+      const lines = [
+        `*New Consultation Request*`,
+        `👤 Name: ${formData.name}`,
+        `📞 Phone: ${formData.phone}`,
+        `📧 Email: ${formData.email}`,
+        formData.course ? `📚 Course: ${formData.course}` : "",
+        formData.message ? `💬 Message: ${formData.message}` : "",
+      ].filter(Boolean);
+
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(whatsappUrl, "_blank");
 
       setIsSubmitted(true);
-      toast.success("Request submitted successfully!", {
-        description: "Our counselor will contact you within 24 hours.",
+      toast.success("Redirecting to WhatsApp!", {
+        description: "Your request has also been saved.",
       });
     } catch (error: any) {
       console.error("Submission error:", error);
