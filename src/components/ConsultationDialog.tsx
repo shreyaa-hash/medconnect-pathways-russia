@@ -232,8 +232,8 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
                   </>
                 ) : (
                   <>
-                    <Send className="w-4 h-4" />
-                    Get Free Counseling
+                    <MessageCircle className="w-4 h-4" />
+                    Send via WhatsApp
                   </>
                 )}
               </Button>
