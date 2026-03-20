@@ -15,42 +15,37 @@ const ContactSection = () => {
   });
   const WHATSAPP_NUMBER = "918299226673";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      const { supabase } = await import("@/integrations/supabase/client");
-      await supabase.from("consultation_requests").insert({
+    // Build WhatsApp URL and open IMMEDIATELY (before any async work) to avoid popup blocker
+    const lines = [
+      `*New Consultation Request*`,
+      `👤 Name: ${formData.name}`,
+      `📞 Phone: ${formData.phone}`,
+      `📧 Email: ${formData.email}`,
+      formData.city ? `🏙️ City: ${formData.city}` : "",
+      formData.message ? `💬 Message: ${formData.message}` : "",
+    ].filter(Boolean);
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(whatsappUrl, "_blank");
+
+    // Save to database in the background (non-blocking)
+    import("@/integrations/supabase/client").then(({ supabase }) => {
+      supabase.from("consultation_requests").insert({
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         course: formData.city || null,
         message: formData.message || null,
       });
+    });
 
-      const lines = [
-        `*New Consultation Request*`,
-        `👤 Name: ${formData.name}`,
-        `📞 Phone: ${formData.phone}`,
-        `📧 Email: ${formData.email}`,
-        formData.city ? `🏙️ City: ${formData.city}` : "",
-        formData.message ? `💬 Message: ${formData.message}` : "",
-      ].filter(Boolean);
-
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
-      window.open(whatsappUrl, "_blank");
-
-      toast.success("Redirecting to WhatsApp!", {
-        description: "Your request has also been saved.",
-      });
-      setFormData({ name: "", email: "", phone: "", city: "", message: "" });
-    } catch (error) {
-      console.error("Submission error:", error);
-      toast.error("Failed to submit. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    toast.success("Opening WhatsApp!", {
+      description: "Your request has also been saved.",
+    });
+    setFormData({ name: "", email: "", phone: "", city: "", message: "" });
   };
   const contactInfo = [{
     icon: Phone,

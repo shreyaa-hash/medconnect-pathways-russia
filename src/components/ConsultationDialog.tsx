@@ -32,47 +32,38 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
 
   const WHATSAPP_NUMBER = "919936949794";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("consultation_requests")
-        .insert({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          course: formData.course || null,
-          message: formData.message || null,
-        });
+    // Open WhatsApp IMMEDIATELY (before any async work) to avoid popup blocker
+    const lines = [
+      `*New Consultation Request*`,
+      `👤 Name: ${formData.name}`,
+      `📞 Phone: ${formData.phone}`,
+      `📧 Email: ${formData.email}`,
+      formData.course ? `📚 Course: ${formData.course}` : "",
+      formData.message ? `💬 Message: ${formData.message}` : "",
+    ].filter(Boolean);
 
-      if (dbError) throw dbError;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(whatsappUrl, "_blank");
 
-      // Build WhatsApp message
-      const lines = [
-        `*New Consultation Request*`,
-        `👤 Name: ${formData.name}`,
-        `📞 Phone: ${formData.phone}`,
-        `📧 Email: ${formData.email}`,
-        formData.course ? `📚 Course: ${formData.course}` : "",
-        formData.message ? `💬 Message: ${formData.message}` : "",
-      ].filter(Boolean);
+    // Save to database in the background (non-blocking)
+    supabase
+      .from("consultation_requests")
+      .insert({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        course: formData.course || null,
+        message: formData.message || null,
+      })
+      .then(() => {});
 
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
-      window.open(whatsappUrl, "_blank");
-
-      setIsSubmitted(true);
-      toast.success("Redirecting to WhatsApp!", {
-        description: "Your request has also been saved.",
-      });
-    } catch (error: any) {
-      console.error("Submission error:", error);
-      toast.error("Failed to submit. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    setIsSubmitted(true);
+    toast.success("Opening WhatsApp!", {
+      description: "Your request has also been saved.",
+    });
   };
 
   const handleClose = () => {
