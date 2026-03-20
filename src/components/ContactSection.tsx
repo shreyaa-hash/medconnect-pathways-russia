@@ -164,13 +164,13 @@ const ContactSection = () => {
               })} />
               </div>
 
-              <Button type="submit" variant="default" size="lg" className="w-full" disabled={isSubmitting}>
+              <Button type="submit" variant="default" size="lg" className="w-full bg-green-600 hover:bg-green-700" disabled={isSubmitting}>
                 {isSubmitting ? <>
                     <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                     Submitting...
                   </> : <>
-                    <Send className="w-4 h-4" />
-                    Request Free Counseling
+                    <MessageCircle className="w-4 h-4" />
+                    Send via WhatsApp - 8299226673
                   </>}
               </Button>
 
