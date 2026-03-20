@@ -13,23 +13,44 @@ const ContactSection = () => {
     city: "",
     message: ""
   });
+  const WHATSAPP_NUMBER = "918299226673";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    toast.success("Thank you! Our counselor will contact you within 24 hours.", {
-      description: "Check your email for confirmation."
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      city: "",
-      message: ""
-    });
-    setIsSubmitting(false);
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.from("consultation_requests").insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        course: formData.city || null,
+        message: formData.message || null,
+      });
+
+      const lines = [
+        `*New Consultation Request*`,
+        `👤 Name: ${formData.name}`,
+        `📞 Phone: ${formData.phone}`,
+        `📧 Email: ${formData.email}`,
+        formData.city ? `🏙️ City: ${formData.city}` : "",
+        formData.message ? `💬 Message: ${formData.message}` : "",
+      ].filter(Boolean);
+
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(whatsappUrl, "_blank");
+
+      toast.success("Redirecting to WhatsApp!", {
+        description: "Your request has also been saved.",
+      });
+      setFormData({ name: "", email: "", phone: "", city: "", message: "" });
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const contactInfo = [{
     icon: Phone,
