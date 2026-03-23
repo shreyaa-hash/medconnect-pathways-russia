@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, ArrowLeft, CheckCircle, GraduationCap, Building, Users, BookOpen } from "lucide-react";
 
