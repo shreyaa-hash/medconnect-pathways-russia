@@ -1,5 +1,6 @@
 import { MapPin, Calendar, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 const UniversitiesSection = () => {
   const universities = [{
     name: "Kazan Federal University",
