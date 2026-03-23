@@ -109,8 +109,8 @@ const UniversitiesSection = () => {
                 </div>
 
                 <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors" onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) contactSection.scrollIntoView({ behavior: "smooth" });
+                  const id = universityIds[uni.name] || "";
+                  navigate(`/universities#${id}`);
                 }}>
                   Learn More
                   <ExternalLink className="w-4 h-4" />
