@@ -2,6 +2,15 @@ import { MapPin, Calendar, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 const UniversitiesSection = () => {
+  const navigate = useNavigate();
+  const universityIds: Record<string, string> = {
+    "Kazan Federal University": "kazan-federal",
+    "Peoples' Friendship University": "peoples-friendship",
+    "Crimean Federal University": "crimean-federal",
+    "Kursk State Medical University": "kursk-state",
+    "Bashkir State Medical University": "bashkir-state",
+    "Orenburg State Medical University": "orenburg-state",
+  };
   const universities = [{
     name: "Kazan Federal University",
     location: "Kazan, Russia",
