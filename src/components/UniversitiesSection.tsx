@@ -1,6 +1,16 @@
 import { MapPin, Calendar, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 const UniversitiesSection = () => {
+  const navigate = useNavigate();
+  const universityIds: Record<string, string> = {
+    "Kazan Federal University": "kazan-federal",
+    "Peoples' Friendship University": "peoples-friendship",
+    "Crimean Federal University": "crimean-federal",
+    "Kursk State Medical University": "kursk-state",
+    "Bashkir State Medical University": "bashkir-state",
+    "Orenburg State Medical University": "orenburg-state",
+  };
   const universities = [{
     name: "Kazan Federal University",
     location: "Kazan, Russia",
@@ -99,8 +109,8 @@ const UniversitiesSection = () => {
                 </div>
 
                 <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors" onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) contactSection.scrollIntoView({ behavior: "smooth" });
+                  const id = universityIds[uni.name] || "";
+                  navigate(`/universities#${id}`);
                 }}>
                   Learn More
                   <ExternalLink className="w-4 h-4" />
