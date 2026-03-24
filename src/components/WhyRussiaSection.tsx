@@ -17,7 +17,7 @@ const WhyRussiaSection = () => {
     {
       icon: BookOpen,
       title: "English Medium",
-      description: "Complete MBBS curriculum taught in English with additional Russian language training for clinical practice.",
+      description: "Complete MBBS curriculum taught in English with additional local language training for clinical practice.",
       highlight: "No Language Barrier",
     },
     {
