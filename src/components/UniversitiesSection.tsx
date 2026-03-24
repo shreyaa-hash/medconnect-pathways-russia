@@ -37,7 +37,7 @@ const UniversitiesSection = () => {
     location: "Kursk, Russia",
     established: 1935,
     ranking: "Pioneer in English",
-    description: "The pioneer of English-medium medical education in Russia, with decades of experience teaching international students and a strong global alumni network.",
+    description: "The pioneer of English-medium medical education abroad, with decades of experience teaching international students and a strong global alumni network.",
     highlights: ["First English Medium", "Strong Alumni", "Hospital Training"]
   }, {
     name: "Bashkir State Medical University",
