@@ -5,7 +5,7 @@ const AboutSection = () => {
     "NMC (National Medical Commission) Approved Universities",
     "Complete Visa & Documentation Assistance",
     "Pre-Departure Orientation Programs",
-    "On-Ground Support in Russia",
+    "On-Ground Support Abroad",
     "FMGE/NEXT Exam Coaching",
     "Student Community Network",
   ];
