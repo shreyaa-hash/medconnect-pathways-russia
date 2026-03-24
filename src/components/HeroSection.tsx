@@ -34,7 +34,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-full px-5 py-2.5 mb-8 animate-fade-up">
             <Sparkles className="w-4 h-4 text-accent" />
             <span className="text-sm font-semibold text-primary-foreground">
-              #1 Medical Education Consultancy for Russia
+              #1 Medical Education Consultancy for Abroad
             </span>
           </div>
 
