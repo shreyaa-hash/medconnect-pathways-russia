@@ -15,8 +15,8 @@ const UniversitiesSection = () => {
     name: "Kazan Federal University",
     location: "Kazan, Russia",
     established: 1804,
-    ranking: "Top 10 in Russia",
-    description: "One of Russia's oldest and most prestigious universities, offering world-class medical education with state-of-the-art facilities and a rich academic heritage.",
+    ranking: "Top 10",
+    description: "One of the oldest and most prestigious universities, offering world-class medical education with state-of-the-art facilities and a rich academic heritage.",
     highlights: ["WHO Recognized", "NMC Approved", "English Medium"]
   }, {
     name: "Peoples' Friendship University",
