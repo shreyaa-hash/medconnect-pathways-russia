@@ -24,7 +24,7 @@ const AboutSection = () => {
     {
       icon: Globe,
       title: "Our Reach",
-      description: "Partnered with top NMC-approved Russian universities to connect you with world-class medical education opportunities.",
+      description: "Partnered with top NMC-approved universities abroad to connect you with world-class medical education opportunities.",
     },
   ];
 
