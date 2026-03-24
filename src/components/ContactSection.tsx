@@ -199,7 +199,7 @@ const ContactSection = () => {
                 <CheckCircle className="w-6 h-6 text-accent" />
                 <h4 className="font-display font-bold text-primary-foreground">Admission Open 2026</h4>
               </div>
-              <p className="text-primary-foreground/80 text-sm mb-4">Limited seats available for 2026 intake. Apply now to secure your spot at top Russian universities.</p>
+              <p className="text-primary-foreground/80 text-sm mb-4">Limited seats available for 2026 intake. Apply now to secure your spot at top universities abroad.</p>
               <Button variant="accent" size="lg" className="w-full" onClick={() => navigate("/auth")}>
                 Apply Now - Free
               </Button>

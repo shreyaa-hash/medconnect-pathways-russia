@@ -96,7 +96,7 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
             <DialogDescription className="text-primary-foreground/80">
               {isSubmitted
                 ? "We've received your request successfully."
-                : "Get free expert counseling for MBBS in Russia"}
+                : "Get free expert counseling for MBBS Abroad"}
             </DialogDescription>
           </DialogHeader>
         </div>

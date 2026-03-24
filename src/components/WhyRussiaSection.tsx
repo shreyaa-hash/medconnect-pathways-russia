@@ -17,7 +17,7 @@ const WhyRussiaSection = () => {
     {
       icon: BookOpen,
       title: "English Medium",
-      description: "Complete MBBS curriculum taught in English with additional Russian language training for clinical practice.",
+      description: "Complete MBBS curriculum taught in English with additional local language training for clinical practice.",
       highlight: "No Language Barrier",
     },
     {
@@ -29,7 +29,7 @@ const WhyRussiaSection = () => {
     {
       icon: Globe2,
       title: "Cultural Diversity",
-      description: "Study alongside students from 80+ countries, building a global network while experiencing rich Russian culture.",
+      description: "Study alongside students from 80+ countries, building a global network while experiencing rich cultural diversity.",
       highlight: "Global Exposure",
     },
   ];
@@ -40,13 +40,13 @@ const WhyRussiaSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
-            Why Study in Russia
+            Why Study Abroad
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Discover Why <span className="text-gradient">Thousands Choose Russia</span>
+            Discover Why <span className="text-gradient">Thousands Choose to Study Abroad</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Russia has been a preferred destination for Indian medical students for over 3 decades, offering quality education at affordable costs.
+            Studying abroad has been a preferred choice for Indian medical students for over 3 decades, offering quality education at affordable costs.
           </p>
         </div>
 

@@ -15,8 +15,8 @@ const UniversitiesSection = () => {
     name: "Kazan Federal University",
     location: "Kazan, Russia",
     established: 1804,
-    ranking: "Top 10 in Russia",
-    description: "One of Russia's oldest and most prestigious universities, offering world-class medical education with state-of-the-art facilities and a rich academic heritage.",
+    ranking: "Top 10",
+    description: "One of the oldest and most prestigious universities, offering world-class medical education with state-of-the-art facilities and a rich academic heritage.",
     highlights: ["WHO Recognized", "NMC Approved", "English Medium"]
   }, {
     name: "Peoples' Friendship University",
@@ -37,7 +37,7 @@ const UniversitiesSection = () => {
     location: "Kursk, Russia",
     established: 1935,
     ranking: "Pioneer in English",
-    description: "The pioneer of English-medium medical education in Russia, with decades of experience teaching international students and a strong global alumni network.",
+    description: "The pioneer of English-medium medical education abroad, with decades of experience teaching international students and a strong global alumni network.",
     highlights: ["First English Medium", "Strong Alumni", "Hospital Training"]
   }, {
     name: "Bashkir State Medical University",
@@ -62,7 +62,7 @@ const UniversitiesSection = () => {
             Our Partner Universities
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Top Russian <span className="text-gradient">Medical Universities</span>
+            Top <span className="text-gradient">Medical Universities Abroad</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We partner with the best NMC-approved universities to ensure you get a globally recognized medical degree.

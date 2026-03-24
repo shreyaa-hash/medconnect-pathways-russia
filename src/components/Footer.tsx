@@ -4,7 +4,7 @@ import logo from "@/assets/logo.jpeg";
 const Footer = () => {
   const quickLinks = [
     { name: "About Us", href: "#about" },
-    { name: "Why Russia", href: "#why-russia" },
+    { name: "Why Abroad", href: "#why-russia" },
     { name: "Universities", href: "#universities" },
     { name: "Services", href: "#services" },
     { name: "Testimonials", href: "#testimonials" },
@@ -50,7 +50,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-primary-foreground/70 text-sm mb-6">
-              Your trusted consultancy for medical education in Russia. Helping students achieve their dreams of becoming doctors.
+              Your trusted consultancy for medical education abroad. Helping students achieve their dreams of becoming doctors.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (

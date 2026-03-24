@@ -5,7 +5,7 @@ const AboutSection = () => {
     "NMC (National Medical Commission) Approved Universities",
     "Complete Visa & Documentation Assistance",
     "Pre-Departure Orientation Programs",
-    "On-Ground Support in Russia",
+    "On-Ground Support Abroad",
     "FMGE/NEXT Exam Coaching",
     "Student Community Network",
   ];
@@ -24,7 +24,7 @@ const AboutSection = () => {
     {
       icon: Globe,
       title: "Our Reach",
-      description: "Partnered with top NMC-approved Russian universities to connect you with world-class medical education opportunities.",
+      description: "Partnered with top NMC-approved universities abroad to connect you with world-class medical education opportunities.",
     },
   ];
 
@@ -45,7 +45,7 @@ const AboutSection = () => {
             <span className="text-gradient block sm:inline"> Medical Education</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Siddhi Vinayak Global MedConnect is the bridge between Indian students and prestigious Russian medical universities.
+            Siddhi Vinayak Global MedConnect is the bridge between Indian students and prestigious medical universities abroad.
           </p>
         </div>
 

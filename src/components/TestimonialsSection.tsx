@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
       icon: Building2,
       value: "15+",
       label: "Partner Universities",
-      description: "Top NMC & WHO recognized medical universities in Russia",
+      description: "Top NMC & WHO recognized medical universities abroad",
     },
     {
       icon: GraduationCap,
