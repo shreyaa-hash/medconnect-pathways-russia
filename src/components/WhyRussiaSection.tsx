@@ -29,7 +29,7 @@ const WhyRussiaSection = () => {
     {
       icon: Globe2,
       title: "Cultural Diversity",
-      description: "Study alongside students from 80+ countries, building a global network while experiencing rich Russian culture.",
+      description: "Study alongside students from 80+ countries, building a global network while experiencing rich cultural diversity.",
       highlight: "Global Exposure",
     },
   ];
