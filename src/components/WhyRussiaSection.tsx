@@ -40,7 +40,7 @@ const WhyRussiaSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
-            Why Study in Russia
+            Why Study Abroad
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Discover Why <span className="text-gradient">Thousands Choose Russia</span>
