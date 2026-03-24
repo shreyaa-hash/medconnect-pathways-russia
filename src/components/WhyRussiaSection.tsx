@@ -43,7 +43,7 @@ const WhyRussiaSection = () => {
             Why Study Abroad
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Discover Why <span className="text-gradient">Thousands Choose Russia</span>
+            Discover Why <span className="text-gradient">Thousands Choose to Study Abroad</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Russia has been a preferred destination for Indian medical students for over 3 decades, offering quality education at affordable costs.
