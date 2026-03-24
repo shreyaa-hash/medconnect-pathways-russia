@@ -121,7 +121,7 @@ const UniversitiesSection = () => {
 
         {/* View All CTA */}
         <div className="text-center mt-12">
-          <Button variant="default" size="lg">
+          <Button variant="default" size="lg" onClick={() => navigate("/universities")}>
             View All 50+ Universities
             <ExternalLink className="w-4 h-4" />
           </Button>
