@@ -62,7 +62,7 @@ const UniversitiesSection = () => {
             Our Partner Universities
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Top Russian <span className="text-gradient">Medical Universities</span>
+            Top <span className="text-gradient">Medical Universities Abroad</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We partner with the best NMC-approved universities to ensure you get a globally recognized medical degree.

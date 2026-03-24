@@ -45,7 +45,7 @@ const AboutSection = () => {
             <span className="text-gradient block sm:inline"> Medical Education</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Siddhi Vinayak Global MedConnect is the bridge between Indian students and prestigious Russian medical universities.
+            Siddhi Vinayak Global MedConnect is the bridge between Indian students and prestigious medical universities abroad.
           </p>
         </div>
 

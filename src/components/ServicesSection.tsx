@@ -29,7 +29,7 @@ const ServicesSection = () => {
     {
       icon: Shield,
       title: "Safety & Support",
-      description: "Round-the-clock on-ground support team in Russia to assist with emergencies.",
+      description: "Round-the-clock on-ground support team abroad to assist with emergencies.",
       features: ["24/7 Helpline", "Emergency Support", "Medical Insurance", "Legal Assistance"],
     },
     {

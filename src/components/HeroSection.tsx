@@ -54,7 +54,7 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-primary-foreground/85 mb-10 max-w-2xl leading-relaxed animate-fade-up" 
             style={{ animationDelay: "0.2s" }}
           >
-            Siddhi Vinayak Global MedConnect guides Indian students to top Russian medical universities with affordable fees, globally recognized degrees, and comprehensive support from admission to graduation.
+            Siddhi Vinayak Global MedConnect guides Indian students to top medical universities abroad with affordable fees, globally recognized degrees, and comprehensive support from admission to graduation.
           </p>
 
           {/* CTA Button */}
