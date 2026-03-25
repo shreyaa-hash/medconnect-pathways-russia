@@ -4,7 +4,7 @@ import logo from "@/assets/logo.jpeg";
 const Footer = () => {
   const quickLinks = [
     { name: "About Us", href: "#about" },
-    { name: "Why Abroad", href: "#why-russia" },
+    { name: "Why Abroad", href: "#why-abroad" },
     { name: "Universities", href: "#universities" },
     { name: "Services", href: "#services" },
     { name: "Testimonials", href: "#testimonials" },
