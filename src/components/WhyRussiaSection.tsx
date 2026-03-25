@@ -35,7 +35,7 @@ const WhyRussiaSection = () => {
   ];
 
   return (
-    <section id="why-russia" className="section-padding bg-muted/50">
+    <section id="why-abroad" className="section-padding bg-muted/50">
       <div className="container-width">
         {/* Section Header */}
         <div className="text-center mb-16">
