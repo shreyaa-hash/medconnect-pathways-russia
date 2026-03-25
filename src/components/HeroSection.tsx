@@ -9,8 +9,8 @@ const HeroSection = () => {
 
   const stats = [
     { icon: GraduationCap, value: "15+", label: "Partner Universities" },
-    { icon: Users, value: "1000+", label: "Students Guided" },
-    { icon: Award, value: "100%", label: "Visa Success" },
+    { icon: Users, value: "24/7", label: "Dedicated Support" },
+    { icon: Award, value: "100%", label: "Genuine Guidance" },
   ];
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
