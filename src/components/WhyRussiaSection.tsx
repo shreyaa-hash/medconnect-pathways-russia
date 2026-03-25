@@ -10,9 +10,9 @@ const WhyRussiaSection = () => {
     },
     {
       icon: Clock,
-      title: "No Entrance Exams",
-      description: "Direct admission based on 12th standard marks. No need to crack competitive exams like NEET for admission (NEET qualified preferred).",
-      highlight: "Easy Admission",
+      title: "Entrance Exam Guidance",
+      description: "Get expert guidance for entrance exams like NEET and university-specific tests. Our team helps you prepare and navigate the admission process smoothly.",
+      highlight: "Exam Support",
     },
     {
       icon: BookOpen,
