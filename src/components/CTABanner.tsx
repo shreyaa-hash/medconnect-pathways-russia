@@ -7,7 +7,7 @@ const CTABanner = () => {
 
   return (
     <>
-      <section className="relative overflow-hidden hero-gradient py-4 md:py-5">
+      <section className="hidden sm:block relative overflow-hidden hero-gradient py-4 md:py-5">
         {/* Subtle shimmer effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer" />
         
