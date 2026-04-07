@@ -82,12 +82,6 @@ const UniversitiesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="default" size="lg" onClick={() => navigate("/universities")}>
-            Explore Universities
-            <ExternalLink className="w-4 h-4" />
-          </Button>
-        </div>
       </div>
     </section>
   );
