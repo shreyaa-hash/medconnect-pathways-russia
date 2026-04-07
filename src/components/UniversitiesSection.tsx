@@ -15,7 +15,7 @@ const UniversitiesSection = () => {
     {
       icon: GraduationCap,
       title: "Top-Ranked Institutions",
-      description: "We collaborate with universities ranked among the best in Russia, offering world-class infrastructure and faculty.",
+      description: "We collaborate with universities ranked among the best globally, offering world-class infrastructure and faculty.",
       highlights: ["QS Ranked", "Modern Campus", "Experienced Faculty"],
     },
     {
